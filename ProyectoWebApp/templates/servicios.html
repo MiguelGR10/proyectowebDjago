@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include "menu.html" %}
+
+
+
+    <h1>Servicios</h1>
+
+    {% block content %}
+
+        {% for servicios in serv %}
+            <div><p>
+                <h2>{{servicios.titulo}}</h2>
+                <p>{{servicios.contenido}}</p>
+                <p><img src="{{servicios.imagen.url}}"></p>
+            </p></div>
+
+        {% endfor %}
+    {% endblock %}
+
+
+
+    {% include "footer.html" %}
+
+
+</body>
+</html>
